@@ -170,7 +170,7 @@ public:
 				std::advance(res, index+1);
 				accounts.insert(res, elem);
 			}
-
+			selected.clear();
 		}
 	}
 
@@ -222,5 +222,13 @@ public:
 			res.push_back(*e);
 		}
 		return res;
+	}
+
+	~Bank()
+	{
+		for(auto elem : accounts)
+		{
+			delete elem;
+		}
 	}
 };
